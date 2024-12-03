@@ -5,8 +5,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const page = () => {
-  const username = localStorage.getItem("username");
-
+  const username = JSON.parse(localStorage.getItem("userData"))?.username || "guest";
+ 
   return (
     <div className={Styles.nav}>
       
@@ -19,7 +19,9 @@ const page = () => {
          {username !== 'Admin' && (<Link href='/components/HomePage'> <li>Home</li></Link>)}
         <Link href='/components/Rent'>  <li>Book Cars</li>  </Link>
          {username !== 'Admin' && (<Link href='/components/Contact'> <li>Contact Us</li></Link>)}
+         {username !== 'Admin' && (<Link href='/components/History'> <li>My Bookings</li></Link>)}
           {username === 'Admin' && ( <Link href='/components/Admin'> <li>Admin</li> </Link>)}
+          {username === 'Admin' && ( <Link href='/components/Logs'> <li>All Bookings</li> </Link>)}
       </div>
 
       <div className={Styles.items}> User: {username || "guest"}

@@ -2,9 +2,32 @@
 import Styles from '../../css/Rent.module.css'
 import NavBar from '../NavBar/page'
 import Image from 'next/image'
- import Link from 'next/link'
-
+import { useState,useEffect } from 'react'
+import axios from 'axios'
+import Link from 'next/link'
+ 
 const page = () => {
+  const [cars, setCars] = useState([]);
+
+   const getCars = async () => {
+    try {
+      const response = await axios.get('/api/upload');  
+       const allCars = [].concat(...response.data);  
+        const uniqueCars = Array.from(
+        new Map(allCars.map(car => [car.id, car])).values()
+      );
+
+      setCars(uniqueCars); 
+      console.log(uniqueCars); 
+    } catch (error) {
+      console.log('Error fetching cars:', error);
+    }
+  };
+
+  useEffect(() => {
+    getCars();
+  }, []);
+
   return (
     <>
      <div className={Styles.container}>
@@ -43,38 +66,43 @@ const page = () => {
       </div>
 
     <div className={Styles.carsDiv}>
-    
-    <div className={Styles.cars}>
-      <div className={Styles.carImage}>
-        <Image src='/images/mercedesC.jpeg' height={200} width={200} alt='mercedes benz c class' />
-      </div>
-      <div className={Styles.carDetails}>
-        <div style={{display:'grid',gap:'7dvh'}}>
-        <div className={Styles.carTitle}>Mercedes Benz</div>
-        <div className={Styles.CarPrice}>$445.00</div>
-        </div>
-        <div className={Styles.moreInfo}>
-          <Image src='/svg/more.svg' width={17} height={17} alt='more' />
-          &nbsp;<p>More Info</p>
-         {/* <p>Car Type : </p> 
-         <p>Fuel Type : </p> 
-         <p>Car Category: : </p> 
-         <p>Fuel Type : </p> 
-         <p>Mileage (Fuel Efficiency) : </p> 
-         <p>Emission Standard</p>  */}
-        </div>
-      </div>
-      <div className={Styles.select}>
-         <div className={Styles.button}>Select</div>
-         <div className={Styles.seater}>
-            7 &nbsp; <Image src='/svg/person.svg' height={20} width={20} alt='person'/>
-
-         </div>
-        
-      </div>
-    </div>
-
-
+   
+         {cars.length > 0 && (
+          cars.map((car) => (
+            <div key={car.id} className={Styles.cars}>
+              <div className={Styles.carImage}>
+                <Image 
+                  src={car.path || '/images/placeholder.jpg'}  
+                  height={200}
+                  width={200}
+                  alt={car.carName}
+                />
+              </div>
+              <div className={Styles.carDetails}>
+                <div style={{ display: 'grid', gap: '7dvh' }}>
+                  <div className={Styles.carTitle}>{car.carName}</div>
+                  <div className={Styles.CarPrice}>${car.pricePerDay || 'N/A'}</div>
+                </div>
+                <div className={Styles.moreInfo}>
+                   <Link href={{ pathname: `/components/Rent/${car.id}`, query: { car: JSON.stringify(car) } }}>
+            <Image src='/svg/more.svg' width={17} height={17} alt='more' />
+            &nbsp;<span>More Info</span>
+          </Link>
+                </div>
+              </div>
+              <div className={Styles.select}>
+                <div className={Styles.button}>
+                <Link href={{ pathname: `/components/Rent/${car.id}`, query: { car: JSON.stringify(car) } }} style={{textDecoration:"none",color:"black"}}>Select</Link></div>
+                <div className={Styles.seater}>
+                  {car.seatCapacity} &nbsp;
+                  <Image src='/svg/person.svg' height={20} width={20} alt='person'/>
+                </div>
+              </div>
+            </div>
+          ))
+        ) }
+       
+ 
     </div>
      
 

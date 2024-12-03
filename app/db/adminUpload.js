@@ -11,7 +11,8 @@ const AdminUpload = sequelize.define('AdminUpload', {
    carName: {
     primaryKey: true,
     type: Sequelize.STRING,
-    allowNull: false,   
+    allowNull: false, 
+    unique:true  
   },
 
   yearOfManufacture: {
@@ -20,7 +21,7 @@ const AdminUpload = sequelize.define('AdminUpload', {
   },
 
   mileage: {
-    type: Sequelize.FLOAT,
+    type: Sequelize.STRING,
     allowNull: false,
   },
 
@@ -66,7 +67,7 @@ const AdminUpload = sequelize.define('AdminUpload', {
 
  });
 
- sequelize.sync({force:true})
+ sequelize.sync()
   .then(() => console.log("Database synced successfully"))
   .catch((err) => console.error('Error synchronizing the database:', err));
 

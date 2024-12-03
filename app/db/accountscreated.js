@@ -26,8 +26,8 @@ const Signup = sequelize.define('accountscreated', {
   },
 });
 
- sequelize.sync()
-  .then(() => console.log("Database synced successfully"))
-  .catch(err => console.error('Error synchronizing the database:', err));
+sequelize.sync()
+.then(() => console.log("Database synced successfully"))
+.catch((err) => console.error('Error synchronizing the database:', err));
 
 module.exports = Signup;

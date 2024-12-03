@@ -93,6 +93,8 @@ font-style: italic;
     background-color: #282828;
     padding: 2dvh 2.5dvh;
     overflow-y: scroll;
+    scrollbar-width: none;  
+    -ms-overflow-style: none;  
     border-radius: 1.7dvh;
 
   }
@@ -102,20 +104,34 @@ font-style: italic;
     font-size: 1.6dvh;
     color: rgba(250, 235, 215, 0.371);
   }
-.carsDiv{
-display: grid;
-width: 79%;
-overflow-y: scroll;
- }  
-.cars {
+  .carsDiv {
+    display: grid;
+    width: 79%;
+    overflow-y: scroll;
+    scrollbar-width: none;  
+    -ms-overflow-style: none; 
+    /* background-color: aliceblue;  */
+  }
+  
+  .carsDiv::-webkit-scrollbar, .TermsConditions::-webkit-scrollbar {
+    display: none;  
+  }
+   
+  .cars {
     display: flex;
     position: relative;
-   background-color: #1b1b1b;
- align-items: center;
-  gap: 2dvw;
+    background-color: #1b1b1b;
+    align-items: center;
+    gap: 2dvw;
     border-bottom: dashed 0.15dvw rgba(255, 255, 255, 0.399);
     padding-bottom: 5dvh;
+    padding-top: 5dvh; 
 }
+
+ .cars:first-child {
+    padding-top: 0;
+}
+
 .cars .carImage{
     width: 45%;
     height: 100%;
@@ -144,13 +160,17 @@ overflow-y: scroll;
     color: whitesmoke;
  }
  .carDetails .moreInfo{
-    display: inline-flex;
-     color: whitesmoke;
-     align-items: center;
-     cursor: pointer;
+      cursor: pointer;
  }
- .carDetails .moreInfo p:hover{
-    text-decoration: underline;
+ .carDetails .moreInfo a{
+  text-decoration: none;
+  color: whitesmoke;
+  display: inline-flex;
+  align-items: center;
+  transition: 0.35s ease;
+ }
+ .carDetails .moreInfo a:hover{
+     color: rgb(74, 220, 38);
  }
  
  .cars .select{
@@ -165,7 +185,7 @@ overflow-y: scroll;
   }
  .cars .select .button{
     background-color: rgb(255, 255, 255);
-    color: rgba(0, 0, 0, 0.889);
+    /* color: rgba(0, 0, 0, 0.889); */
     border-radius: 1dvh;
     padding: 0.8dvh 1.15dvw;
     border: none;
@@ -187,3 +207,5 @@ overflow-y: scroll;
     padding: 0.05dvw 0.5dvw;
 
   }
+
+  

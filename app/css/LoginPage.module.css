@@ -101,14 +101,14 @@
   box-shadow: 0 0 0px var(--width) var(--color);
 }
 
-.Login .icon {
+/* .Login .icon {
   color: white;
   font-size: 1.2dvw;
   display: flex;
   padding: 1.2dvh;
   justify-content: center;
   align-items: center;
-}
+} */
 .googleOutline .googleIcon {
     width: 2dvw; 
     height: auto;  
@@ -116,20 +116,17 @@
     object-fit: contain;  
   }
 .googleOutline {
-    border-radius: calc((1rem + 1.25rem * 2) / 2);
+    /* border-radius: calc((1rem + 1.25rem * 2) / 2); */
      cursor: pointer;
     width: 80%;
     margin: 0 auto;
-    border: 0.2dvh solid #222222 ;
+    /* border: 0.2dvh solid #222222 ; */
     margin-bottom: 0.8dvh;
     display: flex;
   justify-content: center;
   align-items: center;
   }
-  .googleOutline:hover{
-    background-color: #333;
-    transition: 1s ease;
-  }
+  
 .betterOutline {
     font-family: inherit;
     font-size: 1.2dvw;
