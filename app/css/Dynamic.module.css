@@ -1,18 +1,183 @@
 .container {
-    height: 100dvh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #1b1b1b;
-    /* overflow: hidden; */
-  }
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1b1b1b;
+  /* overflow: hidden; */
+}
 
-  .main {
-    height: 90%;
-    width: 95%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    /* background-color: aliceblue;  */
-  }  
+.main {
+  height: 90%;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.carsDiv {
+  /* background-color: aliceblue; */
+  width: 92%;
+  height: 50%;
+  position: relative;
+  top: 12%;
+  display: flex;
+  justify-content: space-between;
+  gap: 2dvw;
+ }
+.carsDiv .second,.carsDiv .third{
+  display: grid;
+ }
+ .carsDiv .second p, .carsDiv .third p{
+  display: inline-flex;
+   gap: 1dvh;
+  font-size: larger;
+  color: white;
+ }
+ .carsDiv .second p i, .carsDiv .third p i{
+   color: rgba(255, 255, 255, 0.515);
+ }
+ .carsDiv .second p img,.carsDiv .third p img{ 
+  width: 3.5dvh;
+  height: 3.5dvh;
+ }
+.carsDiv .second .carTitle{
+  font-size: xx-large;
+  font-style: italic;
+  color: white;
+ }
+ .carsDiv .second .secondBottom{
+display: grid;
+gap: 2dvh;
+position: relative;
+top: -6%;
+ }
+.carsDiv .carImage {
+  width: 40%;
+}
+.carsDiv .carImage img {
+  height: 100%;
+  width: 100%;
+  border-radius: 1.5dvh;
+}
+
+ 
+.inputDiv {
+  display: grid;
+  position: relative;
+  top: 15%;
+  width: 92%;
+   background-color: #282828;
+  border-radius: 1.5dvh;
+  height: 35%;
+  align-items: center;
+  justify-content: center;
+  padding: 4dvh 0 1dvh 0;
+  gap: 2dvh;
+}
+
+.inputDiv .first{
+  display: flex;
+}
+
+.button{
+  display: flex;
+  justify-content: center;
+}
+.button button {
+  border-radius: 50px;
+  background-color:rgb(255, 255, 255) ;
+   color: rgb(0, 0, 0);
+  cursor: pointer;
+  font-size: 1.1dvw;
+   padding: 0.7dvh 1.5dvw;
+   font-style: italic;
+   letter-spacing: 0.2dvw;
+  
+ }
+ .button button:hover {
+  box-shadow: white 0.7vh 0.7vh 9vh;
+ }
+
+ .wrapper {
+  margin: 0 auto;
+ display: flex;
+ flex-direction: row;
+ gap: 3dvh;
+ align-items: center;
+ }
+ .wrapper span{
+ color: azure;
+ display: inline-flex;
+ align-items: center;
+ gap: 0.5dvh;
+ font-size: large;
+}
+.betterOutline::placeholder {
+ font-style: italic;
+}
+
+.betterOutline:focus {
+ --width: 3px;
+ --color: #31a300a0;
+ outline: transparent;
+ box-shadow: 0 0 0px var(--width) var(--color);
+}
+
+.betterOutline {
+  font-family: inherit;
+  font-size: 1.2dvw;
+  color: inherit;
+  border: none;
+  border-radius: calc((1rem + 1.25rem * 2) / 2);
+  background-color: #333;
+  padding: 0.75rem 1.25rem;
+  box-shadow: none;
+  color: white;
+  transition: box-shadow 0.15s;
+}
+
+
+.inputDiv select {
+  font-family: inherit;
+  font-size: 1.2dvw;
+  color: inherit;
+  border: none;
+  border-radius: calc((1rem + 1.25rem * 2) / 2);
+  background-color: #333;
+  padding: 0.75rem 1.25rem;
+  color: white;
+  box-shadow: none;
+  transition: box-shadow 0.15s;
+  appearance: none;  
+  outline: none;  
+  text-align: center;
+}
+
+.inputDiv select:focus {
+  --width: 3px;
+  --color: #31a300a0;
+  outline: transparent;
+  box-shadow: 0 0 0px var(--width) var(--color);
+}
+
+.inputDiv select option {
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+}
+.inputDiv select {
+   cursor: pointer;
+}
+.inputDiv .dynamicSelect{
+  display: flex;
+  justify-content: center;
+  gap: 2dvh;
+}
+.inputDiv .dynamicSelect span{
+  color: azure;
+  font-size: large;
+  display: inline-flex;
+  align-items: center;
+ }

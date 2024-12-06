@@ -3,6 +3,7 @@
 import Styles from '../../css/NavBar.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
+import Cookies from "js-cookie";
 
 const page = () => {
   const username = JSON.parse(localStorage.getItem("userData"))?.username || "guest";
@@ -25,7 +26,12 @@ const page = () => {
       </div>
 
       <div className={Styles.items}> User: {username || "guest"}
-        <Link href='/' onClick={() => localStorage.clear()}> <button>Sign Out</button> </Link>
+        <Link href='/' onClick={() =>{
+           Cookies.remove("validUserLogged");
+           Cookies.remove("AdminLogged");
+          localStorage.clear()
+        } 
+        }> <button>Sign Out</button> </Link>
       </div>
 
     </div>

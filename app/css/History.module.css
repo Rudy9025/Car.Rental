@@ -29,7 +29,7 @@
   width: 92%;
 }
 .cars{
-  padding: 0.2% 1% 0.2% 0;
+  padding: 0.2% 1% 1% 0;
   display: flex;
   align-items: center;
   border-bottom: dashed 0.15dvw rgba(255, 255, 255, 0.399);
@@ -44,7 +44,7 @@
 }
 .cars img{
   border-radius: 1.5dvh;
-  width: 35%;
+  width: 45%;
   height: 90%;
 }
  .CarDetails .carName{

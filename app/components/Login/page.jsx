@@ -7,6 +7,7 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
+import Cookies from 'js-cookie'; 
 
 const page = () => {
   const videoRef = useRef(null);
@@ -99,17 +100,44 @@ const page = () => {
     }
   };
 
+  // const handlelogin = async () => {
+  //   if (email.toLowerCase() === "admin" && password.toLowerCase() === "admin") {
+  //     router.push("/components/Admin");
+  //     localStorage.setItem("userData", JSON.stringify({ username: "Admin" }));
+  //     toast.success("Admin Login");
+  //   }
+  //   if (validateEmail(email) && validatePassword(password)) {
+  //     try {
+  //       const response = await axios.post("/api/login", { email, password });
+  //       if (response.data.message === "Login Successful") {
+  //         router.push("/components/HomePage");
+  //         localStorage.setItem(
+  //           "userData",
+  //           JSON.stringify({
+  //             username: response.data.username,
+  //             email: email,
+  //           })
+  //         );
+  //         toast.success(response.data.message);
+  //       }
+  //     } catch (error) {
+  //       console.log("Error during logging in:", error);
+  //       toast.error(error.response?.data?.message || "Error during logging in");
+  //     }
+  //   }
+  // };
+
   const handlelogin = async () => {
     if (email.toLowerCase() === "admin" && password.toLowerCase() === "admin") {
-      router.push("/components/Admin");
+      Cookies.set('AdminLogged', 'true', { expires: 1 });    
       localStorage.setItem("userData", JSON.stringify({ username: "Admin" }));
       toast.success("Admin Login");
+      router.push("/components/Admin");
     }
     if (validateEmail(email) && validatePassword(password)) {
       try {
         const response = await axios.post("/api/login", { email, password });
         if (response.data.message === "Login Successful") {
-          router.push("/components/HomePage");
           localStorage.setItem(
             "userData",
             JSON.stringify({
@@ -118,6 +146,8 @@ const page = () => {
             })
           );
           toast.success(response.data.message);
+          Cookies.set('validUserLogged', 'true', { expires: 1 });  
+          router.push("/components/HomePage");
         }
       } catch (error) {
         console.log("Error during logging in:", error);
@@ -180,6 +210,7 @@ const page = () => {
                     const decodedCredentials = jwtDecode(
                       credentialResponse.credential
                     );
+                    Cookies.set('validUserLogged', 'true', { expires: 1 });  
                     router.push("/components/HomePage");
                     localStorage.setItem(
                       "userData",

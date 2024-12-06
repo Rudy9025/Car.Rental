@@ -175,8 +175,7 @@ const Page = () => {
         <NavBar />
         
         <form onSubmit={handleSubmit} className={Styles.upload}>
-          {/* Car Name */}
-          <div>
+           {/* <div>
             <label>Car Name:</label>
             <input
               type="text"
@@ -186,8 +185,7 @@ const Page = () => {
             />
           </div>
 
-          {/* Year of Manufacture */}
-          <div>
+           <div>
             <label>Year of Manufacture:</label>
             <input
               type="text"
@@ -197,8 +195,7 @@ const Page = () => {
             />
           </div>
 
-          {/* Mileage */}
-          <div>
+           <div>
             <label>Mileage:</label>
             <input
               type="text"
@@ -208,8 +205,7 @@ const Page = () => {
             />
           </div>
 
-          {/* Fuel Type */}
-          <div>
+           <div>
             <label>Fuel Type:</label>
             <select
               name="fuelType"
@@ -224,8 +220,7 @@ const Page = () => {
             </select>
           </div>
 
-          {/* Car Category */}
-          <div>
+           <div>
             <label>Car Category:</label>
             <select
               name="carCategory"
@@ -242,8 +237,7 @@ const Page = () => {
             </select>
           </div>
 
-          {/* Emission Standard */}
-          <div>
+           <div>
             <label>Emission Standard:</label>
             <select
               name="emissionStandard"
@@ -256,8 +250,7 @@ const Page = () => {
             </select>
           </div>
 
-          {/* Transmission Type */}
-          <div>
+           <div>
             <label>Transmission Type:</label>
             <select
               name="transmissionType"
@@ -270,8 +263,7 @@ const Page = () => {
             </select>
           </div>
 
-          {/* Seat Capacity */}
-          <div>
+           <div>
             <label>Seat Capacity:</label>
             <select
               name="seatCapacity"
@@ -289,8 +281,7 @@ const Page = () => {
             </select>
           </div>
 
-          {/* Price Per Day */}
-          <div>
+           <div>
             <label>Price per Day:</label>
             <input
               type="number"
@@ -300,8 +291,7 @@ const Page = () => {
             />
           </div>
 
-          {/* Price Per Week */}
-          <div>
+           <div>
             <label>Price per Week:</label>
             <input
               type="number"
@@ -311,8 +301,7 @@ const Page = () => {
             />
           </div>
 
-          {/* Price Per Month */}
-          <div>
+           <div>
             <label>Price per Month:</label>
             <input
               type="number"
@@ -328,9 +317,105 @@ const Page = () => {
               name="file"
               onChange={handleFileChange}
             />
-          </div>
+          </div> */}
 
-          <div>
+
+<table className={Styles.carFormTable}>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {/* Row 1 */}
+    <tr>
+      <td><label htmlFor="carName">Car Name:</label></td>
+      <td><input type="text" id="carName" name="carName" value={formData.carName} onChange={handleChange} /></td>
+      <td><label htmlFor="yearOfManufacture">Year of Manufacture:</label></td>
+      <td><input type="text" id="yearOfManufacture" name="yearOfManufacture" value={formData.yearOfManufacture} onChange={handleChange} /></td>
+    </tr>
+    {/* Row 2 */}
+    <tr>
+      <td><label htmlFor="mileage">Mileage:</label></td>
+      <td><input type="text" id="mileage" name="mileage" value={formData.mileage} onChange={handleChange} /></td>
+      <td><label htmlFor="fuelType">Fuel Type:</label></td>
+      <td>
+        <select id="fuelType" name="fuelType" value={formData.fuelType} onChange={handleChange}>
+          <option value="">Select Fuel Type</option>
+          <option value="Petrol">Petrol</option>
+          <option value="Diesel">Diesel</option>
+          <option value="Electric">Electric</option>
+          <option value="Hybrid">Hybrid</option>
+        </select>
+      </td>
+    </tr>
+    {/* Row 3 */}
+    <tr>
+      <td><label htmlFor="carCategory">Car Category:</label></td>
+      <td>
+        <select id="carCategory" name="carCategory" value={formData.carCategory} onChange={handleChange}>
+          <option value="">Select Car Category</option>
+          <option value="SUV">SUV</option>
+          <option value="Luxury Sedan">Luxury Sedan</option>
+          <option value="Sports">Sports</option>
+          <option value="Sedan">Sedan</option>
+          <option value="Hatchback">Hatchback</option>
+          <option value="Truck">Truck</option>
+        </select>
+      </td>
+      <td><label htmlFor="emissionStandard">Emission Standard:</label></td>
+      <td>
+        <select id="emissionStandard" name="emissionStandard" value={formData.emissionStandard} onChange={handleChange}>
+          <option value="">Select Emission Standard</option>
+          <option value="BS5">BS5</option>
+          <option value="BS6">BS6</option>
+        </select>
+      </td>
+    </tr>
+    {/* Row 4 */}
+    <tr>
+      <td><label htmlFor="transmissionType">Transmission Type:</label></td>
+      <td>
+        <select id="transmissionType" name="transmissionType" value={formData.transmissionType} onChange={handleChange}>
+          <option value="">Select Transmission Type</option>
+          <option value="Manual">Manual</option>
+          <option value="Automatic">Automatic</option>
+        </select>
+      </td>
+      <td><label htmlFor="seatCapacity">Seat Capacity:</label></td>
+      <td>
+        <select id="seatCapacity" name="seatCapacity" value={formData.seatCapacity} onChange={handleChange}>
+          <option value="">Select Seat Capacity</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </td>
+    </tr>
+    {/* Row 5 */}
+    <tr>
+      <td><label htmlFor="pricePerDay">Price per Day:</label></td>
+      <td><input type="number" id="pricePerDay" name="pricePerDay" value={formData.pricePerDay} onChange={handleChange} /></td>
+      <td><label htmlFor="pricePerWeek">Price per Week:</label></td>
+      <td><input type="number" id="pricePerWeek" name="pricePerWeek" value={formData.pricePerWeek} onChange={handleChange} /></td>
+    </tr>
+    {/* Row 6 */}
+    <tr>
+      <td><label htmlFor="pricePerMonth">Price per Month:</label></td>
+      <td><input type="number" id="pricePerMonth" name="pricePerMonth" value={formData.pricePerMonth} onChange={handleChange} /></td>
+      <td><label htmlFor="file">Upload File:</label></td>
+      <td><input style={{cursor:'pointer'}} type="file" id="file" name="file" onChange={handleFileChange} /></td>
+    </tr>
+  </tbody>
+</table>
+
+
+          <div className={Styles.button}>
             <button type="submit">Upload</button>
           </div>
         </form>

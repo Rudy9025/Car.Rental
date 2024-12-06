@@ -86,7 +86,7 @@ const page = () => {
         </tbody>
     </table>
 ) : (
-    <p>No logs found.</p>
+    <p style={{color:"white"}}>No logs found.</p>
 )}
 
 

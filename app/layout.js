@@ -4,6 +4,9 @@ import 'dotenv/config'
 
 export const metadata = {
   title: "Car Rental System",
+  icons: {
+    icon: "/images/icons/favicon.png",
+  },
 };
 
 export default function RootLayout({ children }) {

@@ -32,4 +32,75 @@
     font-size: 12px;
     margin-top: 5px;
   }
+  .button{
+    display: flex;
+    justify-content: center;
+  }
+  .button button{
+    background-color: rgb(255, 255, 255);
+    color: rgba(0, 0, 0, 0.889);
+    border-radius: 1dvh;
+    padding: 0.8dvh 1.15dvw;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+     font-size: 1dvw;
+     font-weight: 500;
+     font-style: italic;
+  }
+ .button button:hover{
+    box-shadow: 0 0 2dvw rgba(255, 255, 255, 0.585);
+    color: rgb(34, 37, 37);
+ }
+
+
+
+ 
   
+   
+  .carFormTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  .carFormTable td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    vertical-align: top;  
+  }
+  
+  .carFormTable label {
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+  
+  .carFormTable input[type="text"],
+  .carFormTable input[type="number"],
+  .carFormTable select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .carFormTable input[type="file"] {
+    padding: 5px;
+  }
+  
+  .carFormTable select {
+    width: 100%;
+  }
+  
+  .carFormTable td:first-child {
+    width: 200px;
+    text-align: right;
+  }
+  
+  .carFormTable td:nth-child(2),
+  .carFormTable td:nth-child(4) {
+    width: 50%;
+  }
+ 
