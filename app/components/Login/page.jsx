@@ -18,12 +18,7 @@ const page = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const videos = [
-    "/videos/intro1.mp4",
-    "/videos/intro2.mp4",
-    "/videos/intro3.mp4",
-  ];
-  const router = useRouter();
+   const router = useRouter();
 
   const handleVideoEnd = () => {
     setVideoIndex((prevIndex) => (prevIndex + 1) % videos.length);
@@ -100,6 +95,11 @@ const page = () => {
     }
   };
 
+  const videos = [
+    "/videos/intro1.mp4",
+    "/videos/intro2.mp4",
+    "/videos/intro3.mp4",
+  ];
   // const handlelogin = async () => {
   //   if (email.toLowerCase() === "admin" && password.toLowerCase() === "admin") {
   //     router.push("/components/Admin");
