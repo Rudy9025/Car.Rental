@@ -16,7 +16,7 @@ const page = () => {
   const getCars = async () => {
     try {
       const response = await axios.post("/api/history", { username, Email });
-      console.log("Booking History Response:", response.data[0]);
+      // console.log("Booking History Response:", response.data[0]);
       setBookingHistory(response.data[0]);
     } catch (error) {
       console.log("Error fetching Booking History:", error);
@@ -34,7 +34,7 @@ const page = () => {
       const response = await axios.patch("/api/bookings", { Booking_id });
       if (response.status === 200) {
         getCars();
-        console.log("Booking canceled successfully");
+        console.log("Booking cancelled successfully");
       }
     } catch (error) {
       console.log("Error canceling booking:", error);
@@ -43,7 +43,7 @@ const page = () => {
 
   return (
     <div className={Styles.container}>
-      <ToastContainer stacked/>
+      <ToastContainer stacked />
       <div className={Styles.main}>
         <NavBar />
         <h1>Booking History</h1>
@@ -72,30 +72,64 @@ const page = () => {
                     height={200}
                     width={200}
                     alt="car img"
-                    />
-                    <div className={Styles.CarDetails}>
+                    priority
+                  />
+                  <div className={Styles.CarDetails}>
                     <p className={Styles.carName}>{booking.CarName}</p>
-                  <p> <Image src='/svg/duration.svg' width={1} height={1} alt="duration logo" /> {duration}</p>
-                   <p><Image src='/svg/pickupDate.svg' width={1} height={1} alt="pickupDate logo" /> {booking.pickupDate}</p>
-                  <p className={Styles.amount}><Image src='/svg/dollar.svg' width={1} height={1} alt="dollar logo" /> $ <strong>{booking.TotalAmount}</strong></p>
-                    </div>
-                    
-                  <button className={Styles.button}
+                    <p>
+                      {" "}
+                      <Image
+                        src="/svg/duration.svg"
+                        width={1}
+                        height={1}
+                        alt="duration logo"
+                      />{" "}
+                      {duration}
+                    </p>
+                    <p>
+                      <Image
+                        src="/svg/pickupDate.svg"
+                        width={1}
+                        height={1}
+                        alt="pickupDate logo"
+                      />{" "}
+                      {booking.pickupDate}
+                    </p>
+                    <p className={Styles.amount}>
+                      <Image
+                        src="/svg/dollar.svg"
+                        width={1}
+                        height={1}
+                        alt="dollar logo"
+                      />{" "}
+                      $ <strong>{booking.TotalAmount}</strong>
+                    </p>
+                  </div>
+
+                  <button
+                    className={Styles.button}
                     onClick={() =>
                       (confirm("Are you sure to cancel booking?") &&
                         cancelBooking(booking.Booking_id)) ||
                       toast.warn("Cancellation terminated.")
                     }
                   >
-                    Cancel Booking <Image src='/svg/cancel.svg' width={1} height={1} alt="cancel logo" />
+                    Cancel Booking{" "}
+                    <Image
+                      src="/svg/cancel.svg"
+                      width={1}
+                      height={1}
+                      alt="cancel logo"
+                    />
                   </button>
                 </div>
               );
             })}
           </div>
-          
         ) : (
-          <p>No bookings found.</p>
+          <p style={{ position: "relative", color: "white", top: "10%" }}>
+            No bookings found.
+          </p>
         )}
       </div>
     </div>

@@ -1,18 +1,18 @@
-import sequelize from './db';   
-import { Sequelize } from 'sequelize';
+import sequelize from "./db";
+import { Sequelize } from "sequelize";
 
-const AdminUpload = sequelize.define('AdminUpload', {  
+const AdminUpload = sequelize.define("AdminUpload", {
   id: {
     type: Sequelize.INTEGER,
     primaryKey: true,
     autoIncrement: true,
     allowNull: false,
   },
-   carName: {
+  carName: {
     primaryKey: true,
     type: Sequelize.STRING,
-    allowNull: false, 
-    unique:true  
+    allowNull: false,
+    unique: true,
   },
 
   yearOfManufacture: {
@@ -64,11 +64,11 @@ const AdminUpload = sequelize.define('AdminUpload', {
     type: Sequelize.FLOAT,
     allowNull: false,
   },
+});
 
- });
-
- sequelize.sync()
+sequelize
+  .sync()
   .then(() => console.log("Database synced successfully"))
-  .catch((err) => console.error('Error synchronizing the database:', err));
+  .catch((err) => console.error("Error synchronizing the database:", err));
 
 export default AdminUpload;

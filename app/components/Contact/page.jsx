@@ -1,34 +1,36 @@
-'use client'
-import { useState } from 'react';
-import NavBar from '../NavBar/page';
-import Styles from '../../css/contact.module.css';
-import Image from 'next/image';
-import axios from 'axios';
+"use client";
+import { useState } from "react";
+import NavBar from "../NavBar/page";
+import Styles from "../../css/contact.module.css";
+import Image from "next/image";
+import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Page = () => {
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [message, setMessage] = useState('');
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
   const [isChecked, setIsChecked] = useState(false);
 
-   const isValidEmail = (email) => {
+  const isValidEmail = (email) => {
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return emailPattern.test(email);
   };
 
-   const isValidPhone = (phone) => {
-    const phonePattern = /^[0-9]{10}$/;  
+  const isValidPhone = (phone) => {
+    const phonePattern = /^[0-9]{10}$/;
     return phonePattern.test(phone);
   };
 
-  const LoggedUsername = JSON.parse(localStorage.getItem("userData"))?.username || "guest";
-  const LoggedEmail = JSON.parse(localStorage.getItem("userData"))?.email || "guest";
-   
-   const handleSubmit = async (e) => {
+  const LoggedUsername =
+    JSON.parse(localStorage.getItem("userData"))?.username || "guest";
+  const LoggedEmail =
+    JSON.parse(localStorage.getItem("userData"))?.email || "guest";
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     if (!email || !isValidEmail(email)) {
       toast.error("Please enter a valid email address");
       return;
@@ -41,43 +43,43 @@ const Page = () => {
       toast.warn("Please enter a message");
       return;
     }
-  
-     if (confirm("Ready to send the message?")) {
+
+    if (confirm("Ready to send the message?")) {
       try {
-        const response = await axios.post('/api/contactUs', {
+        const response = await axios.post("/api/contactUs", {
           email,
           phone,
           message,
           LoggedUsername,
-          LoggedEmail
+          LoggedEmail,
         });
-  
+
         if (response.status === 200) {
-          setEmail('');
-          setPhone('');
-          setMessage('');
-          setIsChecked(false);  
+          setEmail("");
+          setPhone("");
+          setMessage("");
+          setIsChecked(false);
           toast.success("Your message has been sent successfully!");
-        }  
+        }
       } catch (err) {
         console.log(err);
-        toast.error('An error occurred while sending your message.');
+        toast.error("An error occurred while sending your message.");
       }
     } else {
       toast.warn("Message not sent.");
     }
   };
-  
+
   return (
     <>
       <div className={Styles.container}>
-      <ToastContainer />
+        <ToastContainer />
         <div className={Styles.main}>
           <NavBar />
           <div className={Styles.contact}>
             <div className={Styles.left}>
               <div>Get in touch</div>
-             
+
               <div>
                 Chat to us
                 <p>Our friendly team is here to help</p>
@@ -86,9 +88,17 @@ const Page = () => {
                 </p>
               </div>
               <div>
-                Call us
+                Ping Us
                 <p>Mon - Fri from 8am - 5pm</p>
-                <p>+91 9025305010</p>
+                <p>
+                  <Image
+                    src="/svg/whatsapp.svg"
+                    width={30}
+                    height={30}
+                    alt="whatsapp"
+                    onClick={() => window.open("https://wa.me/9025305010")}
+                  />
+                </p>
               </div>
               <div>
                 Social Media
@@ -97,8 +107,8 @@ const Page = () => {
                     src="/svg/twitter.svg"
                     width={30}
                     height={30}
-                    alt='Twitter'
-                    onClick={() => window.open('https://x.com/IphoneRudy')}
+                    alt="Twitter"
+                    onClick={() => window.open("https://x.com/IphoneRudy")}
                   />
                 </p>
               </div>
@@ -130,21 +140,22 @@ const Page = () => {
                 />
               </div>
 
-              <div className={Styles.message} style={{ background: 'none', fontSize: '1.7dvh' }}>
+              <div
+                className={Styles.message}
+                style={{ background: "none", fontSize: "1.7dvh" }}
+              >
                 <p>
                   <input
                     type="checkbox"
                     checked={isChecked}
                     onChange={() => setIsChecked(!isChecked)}
                   />
-                  &nbsp;I'd like to receive more information about the company. I understand and agree to the
-                  Privacy Policy
+                  &nbsp;I'd like to receive more information about the company.
+                  I understand and agree to the Privacy Policy
                 </p>
               </div>
               <div className={Styles.button}>
-                <button onClick={handleSubmit}>
-                  Send Message
-                </button>
+                <button onClick={handleSubmit}>Send Message</button>
               </div>
             </div>
           </div>

@@ -1,7 +1,7 @@
 // import { NextResponse } from 'next/server';
 // import path from 'path';
 // import fs from 'fs';
-// import Image from '../../db/image';  
+// import Image from '../../db/image';
 
 //  const UPLOAD_DIR = path.join(process.cwd(), 'public', 'uploads');
 
@@ -13,7 +13,7 @@
 //   if (file) {
 //      const filename = file.name;
 
-//      const filePath = '/uploads/' + filename;   
+//      const filePath = '/uploads/' + filename;
 
 //      const buffer = Buffer.from(await file.arrayBuffer());
 
@@ -27,7 +27,7 @@
 //       await Image.create({
 //         carName:carName,
 //         filename: filename,
-//         path: filePath,   
+//         path: filePath,
 //       });
 
 //        return NextResponse.json({
@@ -49,30 +49,28 @@
 //   }
 // };
 
+import { NextResponse } from "next/server";
+import path from "path";
+import fs from "fs";
+import Image from "../../db/image";
 
-
-import { NextResponse } from 'next/server';
-import path from 'path';
-import fs from 'fs';
-import Image from '../../db/image';
-
-const UPLOAD_DIR = path.join(process.cwd(), 'public', 'uploads');
+const UPLOAD_DIR = path.join(process.cwd(), "public", "uploads");
 
 export const POST = async (req) => {
   const formData = await req.formData();
-  
-  const file = formData.get('file');   
-  const carName = formData.get('carName');   
-  
+
+  const file = formData.get("file");
+  const carName = formData.get("carName");
+
   if (!file) {
     return NextResponse.json({
       success: false,
-      message: 'No file uploaded.',
+      message: "No file uploaded.",
     });
   }
 
   const filename = file.name;
-  const filePath = '/uploads/' + filename;
+  const filePath = "/uploads/" + filename;
 
   const buffer = Buffer.from(await file.arrayBuffer());
 
@@ -84,7 +82,7 @@ export const POST = async (req) => {
 
   try {
     await Image.create({
-      carName: carName,   
+      carName: carName,
       filename: filename,
       path: filePath,
     });
@@ -94,10 +92,10 @@ export const POST = async (req) => {
       name: filename,
     });
   } catch (error) {
-    console.error('Error inserting into the database:', error);
+    console.error("Error inserting into the database:", error);
     return NextResponse.json({
       success: false,
-      message: 'Error saving file details to database.',
+      message: "Error saving file details to database.",
     });
   }
 };

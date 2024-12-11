@@ -1,13 +1,13 @@
 "use client";
 import Styles from "../../css/LoginPage.module.css";
 import React, { useRef, useState } from "react";
- import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
-import Cookies from 'js-cookie'; 
+import Cookies from "js-cookie";
 
 const page = () => {
   const videoRef = useRef(null);
@@ -18,7 +18,7 @@ const page = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-   const router = useRouter();
+  const router = useRouter();
 
   const handleVideoEnd = () => {
     setVideoIndex((prevIndex) => (prevIndex + 1) % videos.length);
@@ -129,7 +129,7 @@ const page = () => {
 
   const handlelogin = async () => {
     if (email.toLowerCase() === "admin" && password.toLowerCase() === "admin") {
-      Cookies.set('AdminLogged', 'true', { expires: 1 });    
+      Cookies.set("AdminLogged", "true", { expires: 1 });
       localStorage.setItem("userData", JSON.stringify({ username: "Admin" }));
       toast.success("Admin Login");
       router.push("/components/Admin");
@@ -146,7 +146,7 @@ const page = () => {
             })
           );
           toast.success(response.data.message);
-          Cookies.set('validUserLogged', 'true', { expires: 1 });  
+          Cookies.set("validUserLogged", "true", { expires: 1 });
           router.push("/components/HomePage");
         }
       } catch (error) {
@@ -204,13 +204,13 @@ const page = () => {
 
               <div className={Styles.item}>(or)</div>
 
-               <div className={`${Styles.icon} ${Styles.googleOutline}`}>
+              <div className={`${Styles.icon} ${Styles.googleOutline}`}>
                 <GoogleLogin
                   onSuccess={(credentialResponse) => {
                     const decodedCredentials = jwtDecode(
                       credentialResponse.credential
                     );
-                    Cookies.set('validUserLogged', 'true', { expires: 1 });  
+                    Cookies.set("validUserLogged", "true", { expires: 1 });
                     router.push("/components/HomePage");
                     localStorage.setItem(
                       "userData",
@@ -219,7 +219,7 @@ const page = () => {
                         email: decodedCredentials.email,
                       })
                     );
-                   }}
+                  }}
                   onError={() => {
                     console.log("Login Failed");
                   }}
@@ -235,7 +235,7 @@ const page = () => {
                   &nbsp;Signup
                 </span>
               </div>
-              <ToastContainer stacked/>
+              <ToastContainer stacked />
             </div>
           )}
           {/* SignUp */}

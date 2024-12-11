@@ -12,13 +12,13 @@
   align-items: center;
   gap: 4dvw;
 }
-.Ptitle{
-    position: absolute;
-    color: rgba(255, 255, 255, 0.466);
-    bottom: 3%;
-    left: 3%;
-    font-size: 2dvw;
-    font-style: italic;
+.Ptitle {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.466);
+  bottom: 3%;
+  left: 3%;
+  font-size: 2dvw;
+  font-style: italic;
 }
 .intro {
   height: 80%;
@@ -68,7 +68,7 @@
 .Login .title {
   display: flex;
   justify-content: center;
-  padding: 3dvh 0 ;
+  padding: 3dvh 0;
   color: white;
   font-size: 1.4dvw;
 }
@@ -81,7 +81,7 @@
 }
 
 .wrapper {
-   margin: 0 auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 4dvh;
@@ -90,7 +90,7 @@
   margin-bottom: 1.5dvw;
 }
 
- .betterOutline::placeholder {
+.betterOutline::placeholder {
   font-style: italic;
 }
 
@@ -110,53 +110,53 @@
   align-items: center;
 } */
 .googleOutline .googleIcon {
-    width: 2dvw; 
-    height: auto;  
-    max-width: 100%;  
-    object-fit: contain;  
-  }
+  width: 2dvw;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
 .googleOutline {
-    /* border-radius: calc((1rem + 1.25rem * 2) / 2); */
-     cursor: pointer;
-    width: 80%;
-    margin: 0 auto;
-    /* border: 0.2dvh solid #222222 ; */
-    margin-bottom: 0.8dvh;
-    display: flex;
+  /* border-radius: calc((1rem + 1.25rem * 2) / 2); */
+  cursor: pointer;
+  width: 80%;
+  margin: 0 auto;
+  /* border: 0.2dvh solid #222222 ; */
+  margin-bottom: 0.8dvh;
+  display: flex;
   justify-content: center;
   align-items: center;
-  }
-  
+}
+
 .betterOutline {
-    font-family: inherit;
-    font-size: 1.2dvw;
-    color: inherit;
-    border: none;
-    border-radius: calc((1rem + 1.25rem * 2) / 2);
-    background-color: #333;
-    padding: 0.75rem 1.25rem;
-    box-shadow: none;
-    color: white;
-    transition: box-shadow 0.15s;
-  }
+  font-family: inherit;
+  font-size: 1.2dvw;
+  color: inherit;
+  border: none;
+  border-radius: calc((1rem + 1.25rem * 2) / 2);
+  background-color: #333;
+  padding: 0.75rem 1.25rem;
+  box-shadow: none;
+  color: white;
+  transition: box-shadow 0.15s;
+}
 
 .Login button {
-    border-radius: 50px;
-    background-color:rgb(255, 255, 255) ;
-     color: rgb(0, 0, 0);
-    cursor: pointer;
-    font-size: 1.1dvw;
-     padding: 0.7dvh 1dvw;
-     font-style: italic;
-     letter-spacing: 0.2dvw;
-   }
+  border-radius: 50px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  font-size: 1.1dvw;
+  padding: 0.7dvh 1dvw;
+  font-style: italic;
+  letter-spacing: 0.2dvw;
+}
 .Login button:hover {
-    box-shadow: white 0.7vh 0.7vh 9vh;
-   }
-   .LoginSign{
-    cursor: pointer;
-   }
-.LoginSign:hover{
-    color: #1dd009a0;
-    transition: 0.7s ease;
-    }
+  box-shadow: white 0.7vh 0.7vh 9vh;
+}
+.LoginSign {
+  cursor: pointer;
+}
+.LoginSign:hover {
+  color: #1dd009a0;
+  transition: 0.7s ease;
+}

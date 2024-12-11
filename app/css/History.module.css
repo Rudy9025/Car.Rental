@@ -1,74 +1,74 @@
 .container {
-    height: 100dvh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #1b1b1b;
-    overflow: hidden;
-  }
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1b1b1b;
+  overflow: hidden;
+}
 
-  .main {
-    height: 90%;
-    width: 95%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    /* background-color: aliceblue;  */
-   }  
+.main {
+  height: 90%;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  /* background-color: aliceblue;  */
+}
 
-.History{
+.History {
   position: relative;
   top: 7.5%;
   color: white;
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
-  scrollbar-width: none;  
+  scrollbar-width: none;
   -ms-overflow-style: none;
   width: 92%;
 }
-.cars{
+.cars {
   padding: 0.2% 1% 1% 0;
   display: flex;
   align-items: center;
   border-bottom: dashed 0.15dvw rgba(255, 255, 255, 0.399);
- 
+
   justify-content: space-between;
 }
 .cars:first-child {
   padding-top: 0;
 }
-.History::-webkit-scrollbar{
+.History::-webkit-scrollbar {
   display: none;
 }
-.cars img{
+.cars img {
   border-radius: 1.5dvh;
   width: 45%;
   height: 90%;
 }
- .CarDetails .carName{
-font-size: xx-large;
- }
- .CarDetails{
+.CarDetails .carName {
+  font-size: xx-large;
+}
+.CarDetails {
   display: flex;
   flex-direction: column;
   gap: 3dvh;
   width: 18%;
- }
- .CarDetails .amount{
+}
+.CarDetails .amount {
   font-size: large;
- }
- .CarDetails p{
+}
+.CarDetails p {
   display: inline-flex;
   align-items: center;
- }
- .CarDetails p img{
+}
+.CarDetails p img {
   width: 3dvw;
   height: 3dvh;
- }
+}
 
- .button{
+.button {
   background-color: rgb(255, 255, 255);
   color: rgba(0, 0, 0, 0.889);
   border-radius: 1dvh;
@@ -76,17 +76,17 @@ font-size: xx-large;
   border: none;
   cursor: pointer;
   transition: 0.2s ease;
-   font-size: 1dvw;
-   font-weight: 500;
-   font-style: italic;
-   display: inline-flex;
-   align-items: center;
+  font-size: 1dvw;
+  font-weight: 500;
+  font-style: italic;
+  display: inline-flex;
+  align-items: center;
 }
-.button:hover{
+.button:hover {
   box-shadow: 0 0 2dvw rgba(255, 255, 255, 0.585);
   color: rgb(34, 37, 37);
 }
-.button img{
+.button img {
   width: 3dvw;
   height: 3dvh;
 }

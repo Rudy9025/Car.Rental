@@ -1,22 +1,28 @@
 import { NextResponse } from "next/server";
-import ContactUs from "@/app/db/contactUs";   
+import ContactUs from "@/app/db/contactUs";
 
 export async function POST(req) {
-    try {
-         const { email, phone, message, LoggedUsername, LoggedEmail } = await req.json();
-        
-         const feedback = await ContactUs.create({
-            email,
-            phone,
-            message,
-            LoggedUsername,
-            LoggedEmail
-        });
+  try {
+    const { email, phone, message, LoggedUsername, LoggedEmail } =
+      await req.json();
 
-         return NextResponse.json({ message: "Feedback submitted successfully" }, { status: 200, feedback });
+    const feedback = await ContactUs.create({
+      email,
+      phone,
+      message,
+      LoggedUsername,
+      LoggedEmail,
+    });
 
-    } catch (error) {
-        console.error("Error processing request:", error);
-          return NextResponse.json({ message: "Error submitting feedback" }, { status: 500 });
-    }
+    return NextResponse.json(
+      { message: "Feedback submitted successfully" },
+      { status: 200, feedback }
+    );
+  } catch (error) {
+    console.error("Error processing request:", error);
+    return NextResponse.json(
+      { message: "Error submitting feedback" },
+      { status: 500 }
+    );
+  }
 }
