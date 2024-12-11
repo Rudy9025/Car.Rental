@@ -69,7 +69,7 @@ export async function GET() {
       a.id, a.carName, i.path, a.yearOfManufacture, a.mileage, a.fuelType, a.carCategory,
       a.emissionStandard, a.transmissionType, a.seatCapacity, a.pricePerDay, a.pricePerWeek, a.pricePerMonth
     FROM images i
-    JOIN adminuploads a ON i.carName = a.carName;
+    JOIN AdminUploads a ON i.carName = a.carName;
   `;
   try {
     const cars = await sequelize.query(query);

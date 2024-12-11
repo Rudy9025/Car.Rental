@@ -77,7 +77,7 @@ const page = () => {
             </div>
 
             <div className={Styles.carsDiv}>
-              {cars.length > 0 &&
+              {/* {cars.length > 0 &&
                 cars.map((car) => (
                   <div key={car.id} className={Styles.cars}>
                     <div className={Styles.carImage}>
@@ -135,7 +135,72 @@ const page = () => {
                       </div>
                     </div>
                   </div>
-                ))}
+                ))} */}
+                {
+  cars.length > 0 ? (
+    cars.map((car) => (
+      <div key={car.id} className={Styles.cars}>
+        <div className={Styles.carImage}>
+          <Image
+            src={car.path || "/images/placeholder.jpg"}
+            height={200}
+            width={200}
+            alt={car.carName}
+          />
+        </div>
+        <div className={Styles.carDetails}>
+          <div style={{ display: "grid", gap: "7dvh" }}>
+            <div className={Styles.carTitle}>{car.carName}</div>
+            <div className={Styles.CarPrice}>
+              ${car.pricePerDay || "N/A"}
+            </div>
+          </div>
+          <div className={Styles.moreInfo}>
+            <Link
+              href={{
+                pathname: `/components/Rent/${car.id}`,
+                query: { car: JSON.stringify(car) },
+              }}
+            >
+              <Image
+                src="/svg/more.svg"
+                width={17}
+                height={17}
+                alt="more"
+              />
+              &nbsp;<span>More Info</span>
+            </Link>
+          </div>
+        </div>
+        <div className={Styles.select}>
+          <div className={Styles.button}>
+            <Link
+              href={{
+                pathname: `/components/Rent/${car.id}`,
+                query: { car: JSON.stringify(car) },
+              }}
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              Select
+            </Link>
+          </div>
+          <div className={Styles.seater}>
+            {car.seatCapacity} &nbsp;
+            <Image
+              src="/svg/person.svg"
+              height={20}
+              width={20}
+              alt="person"
+            />
+          </div>
+        </div>
+      </div>
+    ))
+  ) : (
+    <div style={{color:"white",display:"flex",alignItems:"center",justifyContent:"center"}}>No Cars....</div>
+  )
+}
+
             </div>
           </div>
         </div>
