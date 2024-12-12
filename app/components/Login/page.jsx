@@ -130,9 +130,9 @@ const page = () => {
 
   const handlelogin = async () => {
     if (email.toLowerCase() === "admin" && password.toLowerCase() === "admin") {
-      Cookies.set("AdminLogged", "true", { expires: 1 });
+      Cookies.set("AdminLogged", "true", { expires: 1 ,sameSite: 'None', secure: true });
       // localStorage.setItem("userData", JSON.stringify({ username: "Admin" }));
-      Cookies.set('userData', JSON.stringify({ username: 'Admin' }), { expires: 1 });
+      Cookies.set('userData', JSON.stringify({ username: 'Admin' }), { expires: 1,sameSite: 'None', secure: true });
       toast.success("Admin Login");
       router.push("/components/Admin");
     }
@@ -150,9 +150,9 @@ const page = () => {
           Cookies.set('userData', JSON.stringify({
             username: response.data.username,
             email: email,
-          }), { expires: 1 });
+          }), { expires: 1,sameSite: 'None', secure: true });
           toast.success(response.data.message);
-          Cookies.set("validUserLogged", "true", { expires: 1 });
+          Cookies.set("validUserLogged", "true", { expires: 1,sameSite: 'None', secure: true });
           router.push("/components/HomePage");
         }
       } catch (error) {
@@ -216,7 +216,7 @@ const page = () => {
                     const decodedCredentials = jwtDecode(
                       credentialResponse.credential
                     );
-                    Cookies.set("validUserLogged", "true", { expires: 1 });
+                    Cookies.set("validUserLogged", "true", { expires: 1 ,sameSite: 'None', secure: true});
                     router.push("/components/HomePage");
                     // localStorage.setItem(
                     //   "userData",
@@ -228,7 +228,7 @@ const page = () => {
                     Cookies.set('userData', JSON.stringify({
                       username: decodedCredentials.name,
                       email: decodedCredentials.email,
-                    }), { expires: 1 }); 
+                    }), { expires: 1 ,sameSite: 'None', secure: true}); 
                   }}
                   onError={() => {
                     console.log("Login Failed");
