@@ -1,4 +1,4 @@
-"use client";
+ "use client";
 import Styles from "../../css/HomePage.module.css";
 import NavBar from "../NavBar/page";
 import Image from "next/image";

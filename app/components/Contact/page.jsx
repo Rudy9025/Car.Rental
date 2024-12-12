@@ -1,4 +1,4 @@
-"use client";
+ "use client";
 import { useState } from "react";
 import NavBar from "../NavBar/page";
 import Styles from "../../css/contact.module.css";
@@ -6,6 +6,7 @@ import Image from "next/image";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Cookies from 'js-cookie';
 
 const Page = () => {
   const [email, setEmail] = useState("");
@@ -23,11 +24,14 @@ const Page = () => {
     return phonePattern.test(phone);
   };
 
-  const LoggedUsername =
-    JSON.parse(localStorage.getItem("userData"))?.username || "guest";
-  const LoggedEmail =
-    JSON.parse(localStorage.getItem("userData"))?.email || "guest";
+  // const LoggedUsername =
+  //   JSON.parse(localStorage.getItem("userData"))?.username || "guest";
+  // const LoggedEmail =
+  //   JSON.parse(localStorage.getItem("userData"))?.email || "guest";
+  const userData = Cookies.get('userData');
 
+  const LoggedUsername = userData ? JSON.parse(userData).username : "guest";
+  const LoggedEmail = userData ? JSON.parse(userData).email : "guest";
   const handleSubmit = async (e) => {
     e.preventDefault();
 

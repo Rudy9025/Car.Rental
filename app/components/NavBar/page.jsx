@@ -1,4 +1,4 @@
-"use client";
+ "use client";
 
 import Styles from "../../css/NavBar.module.css";
 import Link from "next/link";
@@ -6,8 +6,11 @@ import Image from "next/image";
 import Cookies from "js-cookie";
 
 const page = () => {
-  const username =
-    JSON.parse(localStorage.getItem("userData"))?.username || "guest";
+  // const username = JSON.parse(localStorage.getItem("userData"))?.username || "guest";
+
+  const userData = Cookies.get('userData');
+
+ const username = userData ? JSON.parse(userData).username : "guest";
 
   return (
     <div className={Styles.nav}>
@@ -61,7 +64,8 @@ const page = () => {
           onClick={() => {
             Cookies.remove("validUserLogged");
             Cookies.remove("AdminLogged");
-            localStorage.clear();
+            Cookies.remove("userData");
+            // localStorage.clear();
           }}
         >
           {" "}

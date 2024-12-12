@@ -1,0 +1,20 @@
+{
+  "/api/bookings/route": "app/api/bookings/route.js",
+  "/api/contactUs/route": "app/api/contactUs/route.js",
+  "/api/history/route": "app/api/history/route.js",
+  "/api/upload/route": "app/api/upload/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/login/route": "app/api/login/route.js",
+  "/api/signups/route": "app/api/signups/route.js",
+  "/api/images/route": "app/api/images/route.js",
+  "/components/Admin/page": "app/components/Admin/page.js",
+  "/components/Contact/page": "app/components/Contact/page.js",
+  "/components/History/page": "app/components/History/page.js",
+  "/components/HomePage/page": "app/components/HomePage/page.js",
+  "/components/Login/page": "app/components/Login/page.js",
+  "/page": "app/page.js",
+  "/components/Logs/page": "app/components/Logs/page.js",
+  "/components/NavBar/page": "app/components/NavBar/page.js",
+  "/components/Rent/page": "app/components/Rent/page.js",
+  "/components/Rent/[carsID]/page": "app/components/Rent/[carsID]/page.js"
+}

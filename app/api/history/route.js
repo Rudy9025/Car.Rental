@@ -6,7 +6,7 @@ export async function POST(req) {
 
   const { username, Email } = data;
   const query = `
-    select * from bookings where (userName,email)=('${username}','${Email}') and delFlag=0;  
+    select * from Bookings where (userName,email)=('${username}','${Email}') and delFlag=0;  
      `;
   try {
     const BookingHistory = await sequelize.query(query);

@@ -1,4 +1,4 @@
-"use client";
+ "use client";
 import { useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
 import Image from "next/image";
@@ -7,6 +7,7 @@ import Styles from "../../../css/Dynamic.module.css";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Cookies from 'js-cookie';
 
 const CarDetails = () => {
   const searchParams = useSearchParams();
@@ -77,9 +78,14 @@ const CarDetails = () => {
     return isValid;
   };
 
-  const username =
-    JSON.parse(localStorage.getItem("userData"))?.username || "guest";
-  const Email = JSON.parse(localStorage.getItem("userData"))?.email || "guest";
+  // const username =  JSON.parse(localStorage.getItem("userData"))?.username || "guest";
+  // const Email = JSON.parse(localStorage.getItem("userData"))?.email || "guest";
+
+  const userData = Cookies.get('userData');
+
+// Parse the cookie and retrieve the username and email
+const username = userData ? JSON.parse(userData).username : "guest";
+const Email = userData ? JSON.parse(userData).email : "guest";
 
   const handleSubmit = async () => {
     if (!validateForm()) {

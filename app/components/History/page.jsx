@@ -1,4 +1,4 @@
-"use client";
+ "use client";
 import { useEffect, useState } from "react";
 import NavBar from "../NavBar/page";
 import Styles from "../../css/History.module.css";
@@ -6,12 +6,16 @@ import axios from "axios";
 import Image from "next/image";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Cookies from 'js-cookie';
 
 const page = () => {
   const [bookingHistory, setBookingHistory] = useState(null);
-  const username =
-    JSON.parse(localStorage.getItem("userData"))?.username || "guest";
-  const Email = JSON.parse(localStorage.getItem("userData"))?.email || "guest";
+  // const username = JSON.parse(localStorage.getItem("userData"))?.username || "guest";
+  // const Email = JSON.parse(localStorage.getItem("userData"))?.email || "guest";
+  const userData = Cookies.get('userData');
+
+ const username = userData ? JSON.parse(userData).username : "guest";
+const Email = userData ? JSON.parse(userData).email : "guest";
 
   const getCars = async () => {
     try {

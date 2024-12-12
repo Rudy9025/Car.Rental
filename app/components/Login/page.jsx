@@ -1,4 +1,4 @@
-"use client";
+ "use client";
 import Styles from "../../css/LoginPage.module.css";
 import React, { useRef, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
 import Cookies from "js-cookie";
+ 
 
 const page = () => {
   const videoRef = useRef(null);
@@ -130,7 +131,8 @@ const page = () => {
   const handlelogin = async () => {
     if (email.toLowerCase() === "admin" && password.toLowerCase() === "admin") {
       Cookies.set("AdminLogged", "true", { expires: 1 });
-      localStorage.setItem("userData", JSON.stringify({ username: "Admin" }));
+      // localStorage.setItem("userData", JSON.stringify({ username: "Admin" }));
+      Cookies.set('userData', JSON.stringify({ username: 'Admin' }), { expires: 1 });
       toast.success("Admin Login");
       router.push("/components/Admin");
     }
@@ -138,13 +140,17 @@ const page = () => {
       try {
         const response = await axios.post("/api/login", { email, password });
         if (response.data.message === "Login Successful") {
-          localStorage.setItem(
-            "userData",
-            JSON.stringify({
-              username: response.data.username,
-              email: email,
-            })
-          );
+          // localStorage.setItem(
+          //   "userData",
+          //   JSON.stringify({
+          //     username: response.data.username,
+          //     email: email,
+          //   })
+          // );
+          Cookies.set('userData', JSON.stringify({
+            username: response.data.username,
+            email: email,
+          }), { expires: 1 });
           toast.success(response.data.message);
           Cookies.set("validUserLogged", "true", { expires: 1 });
           router.push("/components/HomePage");
@@ -212,13 +218,17 @@ const page = () => {
                     );
                     Cookies.set("validUserLogged", "true", { expires: 1 });
                     router.push("/components/HomePage");
-                    localStorage.setItem(
-                      "userData",
-                      JSON.stringify({
-                        username: decodedCredentials.name,
-                        email: decodedCredentials.email,
-                      })
-                    );
+                    // localStorage.setItem(
+                    //   "userData",
+                    //   JSON.stringify({
+                    //     username: decodedCredentials.name,
+                    //     email: decodedCredentials.email,
+                    //   })
+                    // );
+                    Cookies.set('userData', JSON.stringify({
+                      username: decodedCredentials.name,
+                      email: decodedCredentials.email,
+                    }), { expires: 1 }); 
                   }}
                   onError={() => {
                     console.log("Login Failed");

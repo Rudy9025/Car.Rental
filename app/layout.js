@@ -1,4 +1,4 @@
-import "./globals.css";
+ import "./globals.css";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import "dotenv/config";
 
