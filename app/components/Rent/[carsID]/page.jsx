@@ -7,8 +7,8 @@ import Styles from "../../../css/Dynamic.module.css";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Cookies from 'js-cookie';
-
+import { getCookie } from 'cookies-next';
+ 
 const CarDetails = () => {
   const searchParams = useSearchParams();
   const carParam = searchParams.get("car");
@@ -81,11 +81,12 @@ const CarDetails = () => {
   // const username =  JSON.parse(localStorage.getItem("userData"))?.username || "guest";
   // const Email = JSON.parse(localStorage.getItem("userData"))?.email || "guest";
 
-  const userData = Cookies.get('userData');
+  const userData = getCookie("userData");
 
-// Parse the cookie and retrieve the username and email
-const username = userData ? JSON.parse(userData).username : "guest";
+ const username = userData ? JSON.parse(userData).username : "guest";
 const Email = userData ? JSON.parse(userData).email : "guest";
+
+ 
 
   const handleSubmit = async () => {
     if (!validateForm()) {

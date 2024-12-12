@@ -6,8 +6,8 @@ import Image from "next/image";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Cookies from 'js-cookie';
-
+import { getCookie } from 'cookies-next';
+ 
 const Page = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -28,10 +28,13 @@ const Page = () => {
   //   JSON.parse(localStorage.getItem("userData"))?.username || "guest";
   // const LoggedEmail =
   //   JSON.parse(localStorage.getItem("userData"))?.email || "guest";
-  const userData = Cookies.get('userData');
-
-  const LoggedUsername = userData ? JSON.parse(userData).username : "guest";
-  const LoggedEmail = userData ? JSON.parse(userData).email : "guest";
+  const LoggedUsername = getCookie("userData") 
+    ? JSON.parse(getCookie("userData")).username 
+    : "guest";
+const LoggedEmail = getCookie("userData") 
+    ? JSON.parse(getCookie("userData")).email 
+    : "guest";
+   
   const handleSubmit = async (e) => {
     e.preventDefault();
 

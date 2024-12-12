@@ -6,16 +6,17 @@ import axios from "axios";
 import Image from "next/image";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Cookies from 'js-cookie';
-
+import { getCookie } from 'cookies-next';
+ 
 const page = () => {
   const [bookingHistory, setBookingHistory] = useState(null);
   // const username = JSON.parse(localStorage.getItem("userData"))?.username || "guest";
   // const Email = JSON.parse(localStorage.getItem("userData"))?.email || "guest";
-  const userData = Cookies.get('userData');
+  
+  const userData = getCookie("userData");
 
- const username = userData ? JSON.parse(userData).username : "guest";
-const Email = userData ? JSON.parse(userData).email : "guest";
+   const username = userData ? JSON.parse(userData).username : "guest";
+  const Email = userData ? JSON.parse(userData).email : "guest";
 
   const getCars = async () => {
     try {

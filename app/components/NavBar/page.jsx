@@ -3,14 +3,14 @@
 import Styles from "../../css/NavBar.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import Cookies from "js-cookie";
-
+import { getCookie,deleteCookie  } from 'cookies-next';
+ 
 const page = () => {
   // const username = JSON.parse(localStorage.getItem("userData"))?.username || "guest";
+  const userData = getCookie("userData");
 
-  const userData = Cookies.get('userData');
-
- const username = userData ? JSON.parse(userData).username : "guest";
+   const username = userData ? JSON.parse(userData).username : "guest";
+   
 
   return (
     <div className={Styles.nav}>
@@ -62,9 +62,12 @@ const page = () => {
         <Link
           href="/"
           onClick={() => {
-            Cookies.remove("validUserLogged");
-            Cookies.remove("AdminLogged");
-            Cookies.remove("userData");
+            // Cookies.remove("validUserLogged");
+            // Cookies.remove("AdminLogged");
+            // Cookies.remove("userData");
+            deleteCookie("validUserLogged");
+    deleteCookie("AdminLogged");
+    deleteCookie("userData");
             // localStorage.clear();
           }}
         >

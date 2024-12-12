@@ -3,18 +3,18 @@ import NavBar from "../NavBar/page";
 import Styles from "../../css/Logs.module.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Cookies from 'js-cookie';
-
+import { getCookie } from 'cookies-next';
+ 
 const page = () => {
   const [logs, setLogs] = useState([]);
 
   // const username = JSON.parse(localStorage.getItem("userData"))?.username;
   // const Email = JSON.parse(localStorage.getItem("userData"))?.email;
-  const userData = Cookies.get('userData');
+   
+  const userData = getCookie("userData");
 
-// Parse the cookie and retrieve the username and email
-const username = userData ? JSON.parse(userData).username : undefined;
-const Email = userData ? JSON.parse(userData).email : undefined;
+   const username = userData ? JSON.parse(userData).username : undefined;
+  const Email = userData ? JSON.parse(userData).email : undefined;
 
   const getLogs = async () => {
     try {

@@ -7,8 +7,8 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
-import Cookies from "js-cookie";
- 
+import { setCookie } from 'cookies-next';
+  
 
 const page = () => {
   const videoRef = useRef(null);
@@ -130,10 +130,14 @@ const page = () => {
 
   const handlelogin = async () => {
     if (email.toLowerCase() === "admin" && password.toLowerCase() === "admin") {
-      Cookies.set("AdminLogged", "true", { expires: 1 ,sameSite: 'None', secure: true });
-      // localStorage.setItem("userData", JSON.stringify({ username: "Admin" }));
-      Cookies.set('userData', JSON.stringify({ username: 'Admin' }), { expires: 1,sameSite: 'None', secure: true });
-      toast.success("Admin Login");
+       // localStorage.setItem("userData", JSON.stringify({ username: "Admin" }));
+      setCookie("userData", JSON.stringify({ username: "Admin" }), {
+        maxAge: 60 * 60 * 24 * 7,   
+        path: "/",  
+        // sameSite: "none",  // SameSite attribute
+      // secure: true,
+      });
+       toast.success("Admin Login");
       router.push("/components/Admin");
     }
     if (validateEmail(email) && validatePassword(password)) {
@@ -147,13 +151,18 @@ const page = () => {
           //     email: email,
           //   })
           // );
-          Cookies.set('userData', JSON.stringify({
+          setCookie("userData", JSON.stringify({
             username: response.data.username,
             email: email,
-          }), { expires: 1,sameSite: 'None', secure: true });
+          }), {
+            maxAge: 60 * 60 * 24 * 7,  // Cookie expires in 7 days
+            path: "/",  
+            sameSite: "none",  // SameSite attribute
+            secure: true,
+          });
+           
           toast.success(response.data.message);
-          Cookies.set("validUserLogged", "true", { expires: 1,sameSite: 'None', secure: true });
-          router.push("/components/HomePage");
+           router.push("/components/HomePage");
         }
       } catch (error) {
         console.log("Error during logging in:", error);
@@ -216,20 +225,24 @@ const page = () => {
                     const decodedCredentials = jwtDecode(
                       credentialResponse.credential
                     );
-                    Cookies.set("validUserLogged", "true", { expires: 1 ,sameSite: 'None', secure: true});
-                    router.push("/components/HomePage");
                     // localStorage.setItem(
-                    //   "userData",
-                    //   JSON.stringify({
-                    //     username: decodedCredentials.name,
-                    //     email: decodedCredentials.email,
-                    //   })
-                    // );
-                    Cookies.set('userData', JSON.stringify({
-                      username: decodedCredentials.name,
-                      email: decodedCredentials.email,
-                    }), { expires: 1 ,sameSite: 'None', secure: true}); 
-                  }}
+                      //   "userData",
+                      //   JSON.stringify({
+                        //     username: decodedCredentials.name,
+                        //     email: decodedCredentials.email,
+                        //   })
+                        // );
+                        setCookie("userData", JSON.stringify({
+                          username: decodedCredentials.name,
+                          email: decodedCredentials.email,
+                        }), {
+                          maxAge: 60 * 60 * 24 * 7,  // Cookie expires in 7 days
+                          path: "/",  
+                          sameSite: "none",  // SameSite attribute
+                          secure: true,
+                        });
+                        router.push("/components/HomePage");
+                   }}
                   onError={() => {
                     console.log("Login Failed");
                   }}
