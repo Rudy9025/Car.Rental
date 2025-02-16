@@ -1,0 +1,160 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/css/NavBar.module.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************/
+.NavBar_nav__KlVRO {
+  position: fixed;
+  top: 5%;
+  height: 7.5%;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 1.5dvh;
+  background-color: #282828;
+  color: rgba(190, 180, 180, 0.889);
+  align-items: center;
+  padding: 0 2dvw;
+  z-index: 1000;
+  font-size: 1.4dvw;
+}
+
+.NavBar_items__e1yni {
+  display: inline-flex;
+  align-items: center;
+  gap: 2dvw;
+}
+.NavBar_items__e1yni li,
+.NavBar_items__e1yni a {
+  list-style: none;
+  text-decoration: none;
+  color: rgba(190, 180, 180, 0.889);
+}
+.NavBar_title__E9y2Q {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 900;
+  color: azure;
+}
+.NavBar_items__e1yni li:hover {
+  color: aliceblue;
+  text-shadow: 0.5dvw 0.5dvw 2dvw rgba(255, 255, 255, 0.585);
+}
+.NavBar_items__e1yni button {
+  background-color: rgb(255, 255, 255);
+  color: rgba(0, 0, 0, 0.889);
+  border-radius: 1dvh;
+  padding: 0.8dvh 1.15dvw;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-size: 1dvw;
+  font-weight: 500;
+  font-style: italic;
+}
+.NavBar_items__e1yni button:hover {
+  box-shadow: 0 0 2dvw rgba(255, 255, 255, 0.585);
+  color: rgb(34, 37, 37);
+}
+
+/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/css/Logs.module.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************/
+.Logs_container__l59b7 {
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1b1b1b;
+  overflow: hidden;
+}
+
+.Logs_main__bIPZn {
+  height: 90%;
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.Logs_tableDiv__waeYj {
+  position: relative;
+  top: 11%;
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  max-height: 88%;
+}
+.Logs_tableDiv__waeYj::-webkit-scrollbar {
+  display: none;
+}
+
+.Logs_tables__sBEYL {
+  border-collapse: collapse;
+  width: 100%;
+  box-shadow: 0.5dvh 0.5dvh 10dvh rgba(255, 255, 255, 0.429);
+}
+
+.Logs_tables__sBEYL tbody tr:nth-child(odd) {
+  background-color: #000000;
+}
+
+.Logs_tables__sBEYL tbody tr:nth-child(even) {
+  background-color: #02020245;
+}
+
+.Logs_tables__sBEYL thead tr td {
+  border-top: none;
+}
+.Logs_tables__sBEYL tbody tr td,
+.Logs_tables__sBEYL thead tr th {
+  border-bottom: 0.1px solid #ffffff41;
+  border-left: none;
+  border-right: none;
+  text-align: center;
+}
+.Logs_tables__sBEYL tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.Logs_tables__sBEYL thead tr th {
+  font-size: medium;
+  font-style: italic;
+  color: white;
+  padding: 2dvh 0.4dvw;
+}
+.Logs_tables__sBEYL tbody tr td {
+  color: rgba(255, 255, 255, 0.533);
+  padding: 4dvh 0.4dvw;
+}
+
+.Logs_tables__sBEYL tbody tr:hover {
+  background-color: #292603;
+  color: white;
+}
+
+.Logs_tables__sBEYL tbody tr:hover td {
+  color: white;
+}
+
+
+.Logs_loader__mNCVI {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 3px solid #FFF;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  animation: Logs_rotation__i_YOl 1s linear infinite;
+}
+
+@keyframes Logs_rotation__i_YOl {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 

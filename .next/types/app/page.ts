@@ -1,4 +1,4 @@
-// File: C:\Users\r9025\OneDrive\Desktop\Car Rental System\car\app\page.js
+// File: C:\Users\r9025\OneDrive\Desktop\New folder\Car.Rental\app\page.js
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

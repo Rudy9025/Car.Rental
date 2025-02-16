@@ -11,6 +11,68 @@
       "static/chunks/main-app.js",
       "static/css/app/page.css",
       "static/chunks/app/page.js"
+    ],
+    "/components/HomePage/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/components/HomePage/page.css",
+      "static/chunks/app/components/HomePage/page.js"
+    ],
+    "/components/History/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/components/History/page.css",
+      "static/chunks/app/components/History/page.js"
+    ],
+    "/api/history/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/history/route.js"
+    ],
+    "/components/Rent/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/components/Rent/page.css",
+      "static/chunks/app/components/Rent/page.js"
+    ],
+    "/api/upload/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/upload/route.js"
+    ],
+    "/components/Contact/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/components/Contact/page.css",
+      "static/chunks/app/components/Contact/page.js"
+    ],
+    "/components/Rent/[carsID]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/components/Rent/[carsID]/page.css",
+      "static/chunks/app/components/Rent/[carsID]/page.js"
+    ],
+    "/components/Admin/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/components/Admin/page.css",
+      "static/chunks/app/components/Admin/page.js"
+    ],
+    "/components/Logs/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/components/Logs/page.css",
+      "static/chunks/app/components/Logs/page.js"
+    ],
+    "/api/bookings/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/bookings/route.js"
+    ],
+    "/api/login/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/login/route.js"
     ]
   }
 }

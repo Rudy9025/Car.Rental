@@ -1,0 +1,288 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/css/Rent.module.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************/
+.Rent_container__K68Nt {
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1b1b1b;
+  overflow: hidden;
+}
+
+.Rent_main__rLpv3 {
+  height: 90%;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  /* background-color: aliceblue;  */
+}
+.Rent_title__t_a7E {
+  position: relative;
+  top: 25%;
+  color: aliceblue;
+  font-weight: 900;
+  text-shadow: 0.5vw 0.5vw 2dvw rgba(255, 255, 255, 0.6);
+  font-size: 2.5dvw;
+  z-index: 1000;
+  font-style: italic;
+  letter-spacing: 0.5dvw;
+}
+.Rent_image__DQ12H {
+  position: relative;
+  top: 6%;
+  border-radius: 1.5dvh;
+  height: 25%;
+  width: 94%;
+  background: url("/images/interior.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.Rent_status__dNMrh {
+  height: 10%;
+  width: 95%;
+  position: relative;
+  top: 8%;
+  background-color: #282828;
+  border-radius: 1.5dvh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  justify-content: center;
+  gap: 10dvw;
+}
+
+.Rent_status__dNMrh .Rent_circle__mo7Zp {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5dvh;
+  align-items: center;
+  justify-content: center;
+}
+.Rent_status__dNMrh .Rent_c__xDmYr {
+  color: #282828;
+  background-color: rgba(245, 245, 245, 0.885);
+  height: 4dvh;
+  width: 3dvw;
+  border-radius: 100%;
+  font-weight: 800;
+  font-size: 2.4dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Rent_status__dNMrh .Rent_circle__mo7Zp p {
+  color: rgba(245, 245, 245, 0.521);
+  font-weight: 600;
+  font-size: 2dvh;
+  font-style: italic;
+}
+
+.Rent_Booking__0BByL {
+  display: flex;
+  height: 45%;
+  width: 95%;
+  justify-content: space-between;
+  position: relative;
+  top: 11.5%;
+  gap: 2dvw;
+}
+.Rent_TermsConditions__XopV_ {
+  color: antiquewhite;
+  width: 20%;
+  background-color: #282828;
+  padding: 2dvh 2.5dvh;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  border-radius: 1.7dvh;
+}
+.Rent_TermsConditions__XopV_ p {
+  padding: 1dvh 0;
+  border-bottom: dashed 0.12dvw rgba(255, 255, 255, 0.715);
+  font-size: 1.6dvh;
+  color: rgba(250, 235, 215, 0.371);
+}
+.Rent_carsDiv__Atwui {
+  display: grid;
+  width: 79%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  /* background-color: aliceblue;  */
+}
+
+.Rent_carsDiv__Atwui::-webkit-scrollbar,
+.Rent_TermsConditions__XopV_::-webkit-scrollbar {
+  display: none;
+}
+
+.Rent_cars__Db_FK {
+  display: flex;
+  position: relative;
+  background-color: #1b1b1b;
+  align-items: center;
+  gap: 2dvw;
+  border-bottom: dashed 0.15dvw rgba(255, 255, 255, 0.399);
+  padding-bottom: 5dvh;
+  padding-top: 5dvh;
+}
+
+.Rent_cars__Db_FK:first-child {
+  padding-top: 0;
+}
+
+.Rent_cars__Db_FK .Rent_carImage__7jOLo {
+  width: 45%;
+  height: 100%;
+}
+.Rent_cars__Db_FK .Rent_carImage__7jOLo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.7dvh;
+}
+.Rent_carDetails__8_YYH {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: start;
+  justify-content: space-between;
+}
+.Rent_carDetails__8_YYH .Rent_carTitle__60YnT {
+  font-size: 1.6dvw;
+  font-weight: 400;
+  letter-spacing: 0.4dvw;
+  color: whitesmoke;
+}
+.Rent_carDetails__8_YYH .Rent_CarPrice__JJ6dp {
+  font-size: 2.1dvw;
+  font-weight: 900;
+  color: whitesmoke;
+}
+.Rent_carDetails__8_YYH .Rent_moreInfo__mXmrJ {
+  cursor: pointer;
+}
+.Rent_carDetails__8_YYH .Rent_moreInfo__mXmrJ a {
+  text-decoration: none;
+  color: whitesmoke;
+  display: inline-flex;
+  align-items: center;
+  transition: 0.35s ease;
+}
+.Rent_carDetails__8_YYH .Rent_moreInfo__mXmrJ a:hover {
+  color: rgb(74, 220, 38);
+}
+
+.Rent_cars__Db_FK .Rent_select__br3Kq {
+  position: absolute;
+  right: 5%;
+  display: flex;
+  flex-direction: column;
+  height: 85%;
+  align-items: start;
+  justify-content: space-between;
+  color: whitesmoke;
+}
+.Rent_cars__Db_FK .Rent_select__br3Kq .Rent_button__DVkMm {
+  background-color: rgb(255, 255, 255);
+  /* color: rgba(0, 0, 0, 0.889); */
+  border-radius: 1dvh;
+  padding: 0.8dvh 1.15dvw;
+  border: none;
+  cursor: pointer;
+  font-size: 1dvw;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.Rent_cars__Db_FK .Rent_select__br3Kq .Rent_button__DVkMm:hover {
+  box-shadow: 0 0 2dvw rgba(255, 255, 255, 0.585);
+  color: rgb(34, 37, 37);
+  transition: 0.5s ease;
+}
+.Rent_cars__Db_FK .Rent_select__br3Kq .Rent_seater__U16_v {
+  display: inline-flex;
+  align-items: center;
+  border: 0.04dvw solid rgba(255, 255, 255, 0.295);
+  padding: 0.05dvw 0.5dvw;
+}
+
+.Rent_loader__VvXbW {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 3px solid #FFF;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  animation: Rent_rotation__PA2rB 1s linear infinite;
+}
+
+@keyframes Rent_rotation__PA2rB {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+/*!*********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./app/css/NavBar.module.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************/
+.NavBar_nav__KlVRO {
+  position: fixed;
+  top: 5%;
+  height: 7.5%;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 1.5dvh;
+  background-color: #282828;
+  color: rgba(190, 180, 180, 0.889);
+  align-items: center;
+  padding: 0 2dvw;
+  z-index: 1000;
+  font-size: 1.4dvw;
+}
+
+.NavBar_items__e1yni {
+  display: inline-flex;
+  align-items: center;
+  gap: 2dvw;
+}
+.NavBar_items__e1yni li,
+.NavBar_items__e1yni a {
+  list-style: none;
+  text-decoration: none;
+  color: rgba(190, 180, 180, 0.889);
+}
+.NavBar_title__E9y2Q {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 900;
+  color: azure;
+}
+.NavBar_items__e1yni li:hover {
+  color: aliceblue;
+  text-shadow: 0.5dvw 0.5dvw 2dvw rgba(255, 255, 255, 0.585);
+}
+.NavBar_items__e1yni button {
+  background-color: rgb(255, 255, 255);
+  color: rgba(0, 0, 0, 0.889);
+  border-radius: 1dvh;
+  padding: 0.8dvh 1.15dvw;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-size: 1dvw;
+  font-weight: 500;
+  font-style: italic;
+}
+.NavBar_items__e1yni button:hover {
+  box-shadow: 0 0 2dvw rgba(255, 255, 255, 0.585);
+  color: rgb(34, 37, 37);
+}
+
